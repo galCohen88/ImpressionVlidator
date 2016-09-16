@@ -1,11 +1,11 @@
 import cv2
 import numpy as np
 
-img_rgb = cv2.imread('template.png')
-template = cv2.imread('pattern.png')
-h, w = template.shape[:-1]
+img_rgb = cv2.imread('webpage.png')
+pattern = cv2.imread('pattern.png')
+h, w = pattern.shape[:-1]
 
-res = cv2.matchTemplate(img_rgb, template, cv2.TM_CCOEFF_NORMED)
+res = cv2.matchTemplate(img_rgb, pattern, cv2.TM_CCOEFF_NORMED)
 threshold = .8
 loc = np.where(res >= threshold)
 for pt in zip(*loc[::-1]):  # Switch collumns and rows
