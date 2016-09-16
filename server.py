@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, jsonify
+from flask import Flask, request
 import cv2
 import numpy as np
 import uuid
