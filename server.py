@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request
+from flask import Flask, request, render_template
 import cv2
 import numpy as np
 import uuid
@@ -27,6 +27,11 @@ def upload_file():
     website_file.close()
     result_file = find_result(request_uuid)
     return send_file(result_file, mimetype='image/png')
+
+
+@app.route('/image-processing')
+def upload_page():
+    return render_template('upload_files.html')
 
 
 def find_result(request_uuid):
